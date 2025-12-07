@@ -1,5 +1,8 @@
-%% *Fig 3*
+%% ******** Fig 3 ******
+
 %% *Net city-wide demand*
+%%% With the solar irradiance data of a single day: March 22th, 2024
+
 
 clear; clc; close all;
 
@@ -11,8 +14,8 @@ T_left = readtable("../data/SystemLoad/SystemLoad_SystemOpt_v1_2025-10-20.csv");
 set(groot,'defaultAxesFontName','Helvetica');
 set(groot,'defaultTextFontName','Helvetica');
 
-fig_w_cm = 18.3;   % two-column width
-fig_h_cm = 9.6;    % compact height; shared legend at bottom
+fig_w_cm = 18.3;  
+fig_h_cm = 9.6;   
 figure('Units','centimeters','Position',[2 2 fig_w_cm fig_h_cm]);
 tl = tiledlayout(1,2,'Padding','compact','TileSpacing','compact');
 
@@ -25,7 +28,7 @@ C.deepRed      = [0.70 0.15 0.15];
 C.lightRed     = [0.85 0.45 0.45];
 C.blue         = [0.20 0.50 0.80];
 C.lightBlue    = [0.45 0.70 0.90];
-C.blueGray = [0.25 0.25 0.25];     % benchmark dark neutral gray
+C.blueGray = [0.25 0.25 0.25];    
 
 
 plot_vars = {'SystemLoad','OnlyV2G','NetLoad','V2G','Uncontrolled'};
@@ -57,7 +60,7 @@ for i = 1:numel(plot_vars)
 
 end
 
-%disp("Peak recttion: " + max(T_left.(v)) );
+
 title(ax1, 'System-level optimization', 'FontSize', base_pt);
 xlabel(ax1, 'Hour of day', 'FontSize', label_pt);
 ylabel(ax1, 'Net city-wide demand (MW)', 'FontSize', label_pt);

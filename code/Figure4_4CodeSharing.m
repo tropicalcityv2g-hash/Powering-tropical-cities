@@ -1,11 +1,12 @@
-
-
 %% *Fig 4 - Impact of Mobility Pattern on EV charging*
-%% *Number of parked vehicles - By aggregating the number of vehicles in each planning area for a day.*
+%%% The comparison bettween weekday and weekends. 
+
+
+%% Fig. 4a: *Number of parked vehicles - By aggregating the number of vehicles in each planning area for a day.*
 
 clear all; close all; clc;
 
-%% --- Load data (parked vehicles) ---
+%%% --- Load data (parked vehicles) ---
 filename_SEMBAWANG          = '../data/ParkedVehNumberData/ParkedVehData_SEMBAWANG.csv';
 filename_SEMBAWANG_weekend  = '../data/ParkedVehNumberData/ParkedVehData_SEMBAWANG_weekend.csv';
 filename_OUTRAM             = '../data/ParkedVehNumberData/ParkedVehData_OUTRAM.csv';
@@ -34,17 +35,14 @@ top_idx = colIndices(1:num_line_to_show);
 
 Y_weekday = max_load(top_idx, col_weekday);
 Y_weekend = max_load(top_idx, col_weekend);
-
-%% --- Colors (fixed & consistent) ---
 cWeekday = [0.8500 0.3250 0.0980];  % red
 cWeekend = [0.0000 0.4470 0.7410];  % blue
 
 
 
-
 cGrid  = 0.85*[1 1 1];
 
-%% --- Figure (1×3) ---
+%%5 --- Figure (1×3) ---
 figure('Units','centimeters','Position',[2 2 18.3 6.5]); % two-column width, short height
 
 tiledlayout(1,3,'Padding','compact','TileSpacing','compact');
@@ -118,7 +116,15 @@ exportgraphics(gcf, fullfile(outdir,"Fig4_" +...
     string(datetime("now", "Format", "yyyy-MM-dd")) + ".pdf"), ...
     'ContentType','vector','BackgroundColor','none');
 
-%%
+
+
+
+
+
+
+
+%% Supplementary Note 12: V2G potential on weekdays and weekends
+%%% FIG. S25: Maximum loads of all lines on weekdays and weekends.
 
 x = max_load(:, 4);        
 y = max_load(:, 10); 
@@ -178,9 +184,6 @@ grid on; ax = gca; ax.GridColor = gridCol;
 set(ax, 'FontSize', base_pt, 'TickDir','out', 'LineWidth',0.8, ...
     'Box','off', 'XMinorTick','on', 'YMinorTick','on', 'TickLength',[0.015 0.01]);
 
-pct_change = (y - x) ./ x * 100;
-mean_pct   = mean(pct_change);
-std_pct    = std(pct_change);
 
 text(300, 500, 'Weekday < Weekend', 'FontSize', 7, 'Rotation', 45, 'FontWeight', 'normal');
 text(400, 200, 'Weekday > Weekend', 'FontSize', 7, 'Rotation', 45, 'FontWeight', 'normal');
@@ -189,6 +192,8 @@ text(100, 900, sprintf("PV+V2G: district-level optimization"), ...
      'FontSize', 7, 'FontWeight', 'bold', 'Color', 'k');
 
 hold off;
+
+
 
 
 %{  %}

@@ -1,5 +1,13 @@
-%% *Fig 2 - 2025 Sep Version* 
+%% ****** Fig. 2 a and b********
+% *(relevant data are included in the code)*
+%%% The code generates subfigures for Fig. 2.
+
+
+
 %% *Fig. 2 a and b*
+%%% The single-day examples (Fig. 1c and Fig. 2a and b) are for illustrative purposes only,
+%%% and that the full simulations (Figs. 1d, 2c-f and 4) loads and processes multi-day PV output data.
+
 
 clear all; close all; clc;
 
@@ -10,9 +18,8 @@ data_LocalLoad_SystemOpti_thunder = readtable("../data/Data4Figure/Line74Tempora
 
 mode_list = ["SystemLoad", "NetLoad", "OnlyV2G", "V1G", "V2G", "UncontrolledCharging"];
 DisplayName_list = ["No PV, no EV", "PV only", "V2G Only", "PV + V1G", "PV + V2G", "PV + Uncontrolled charging"];
-plot_cols = [1, 3, 2, 5, 6];      % order to plot (5 lines total)
+plot_cols = [1, 3, 2, 5, 6];     
 
-% x-axis (15-min)
 t = (0.25:0.25:24)';
 
 data_SystemOpt_th = smoothdata(table2array(data_LocalLoad_SystemOpti_thunder),...
@@ -20,19 +27,19 @@ data_SystemOpt_th = smoothdata(table2array(data_LocalLoad_SystemOpti_thunder),..
 data_LocalOpt_th  = smoothdata(table2array(data_LocalLoad_LocalOpti_thunder ),...
     "movmean", 1);
 
-%% ---------------- Nature-ish figure & axes defaults ----------------
+%%% ---------------- figure & axes defaults ----------------
 set(groot,'defaultAxesFontName','Helvetica');
 set(groot,'defaultTextFontName','Helvetica');
 
-fig_w_cm = 18.3;   % two-column width
-fig_h_cm = 7.0;    % compact height for 1×2
+fig_w_cm = 18.3;   
+fig_h_cm = 7.0;    
 figure('Units','centimeters','Position',[2 2 fig_w_cm fig_h_cm]);
 
 tiledlayout(1,2, 'Padding','compact', 'TileSpacing','compact');
 
-base_pt   = 7.5;   % body text
-label_pt  = 8.5;   % axis labels
-line_w    = 1.5;   % line width
+base_pt   = 7.5;  
+label_pt  = 8.5;  
+line_w    = 1.5;  
 
 
 C = struct();
@@ -57,12 +64,12 @@ curveColors = containers.Map( ...
 
 curveStyles = containers.Map( ...
     num2cell(plot_cols), ...
-    {':', '--', '-', '-', "-."} ... % OnlyV2G='--', Uncontrolled=':'
+    {':', '--', '-', '-', "-."} ...
 );
 
 
 
-%% ---------------- (1) System-level optimization (thunder) ----------------
+%%% ---------------- (1) System-level optimization (thunder) ----------------
 ax1 = nexttile; hold(ax1,'on');
 for k = 1:numel(plot_cols)
     ci = plot_cols(k);
@@ -77,13 +84,11 @@ xlabel(ax1, 'Hour of day', 'FontSize', label_pt);
 ylabel(ax1, 'Line load (MW)', 'FontSize', label_pt);
 title(ax1, 'System-level optimization', 'FontSize', base_pt);
 xlim(ax1, [0 24]); ylim(ax1, [200 700]);grid(ax1, 'on'); 
-
-% Axes aesthetics
 set(ax1, 'FontSize', base_pt, 'TickDir','out', 'LineWidth',0.8, ...
     'Box','off', 'XMinorTick','on', 'YMinorTick','on', 'TickLength',[0.015 0.01]);
 
 
-%% ---------------- (2) District-level optimization (thunder) ----------------
+%%% ---------------- (2) District-level optimization (thunder) ----------------
 ax2 = nexttile; hold(ax2,'on');
 for k = 1:numel(plot_cols)
     ci = plot_cols(k);
@@ -102,14 +107,13 @@ xlim(ax2, [0 24]); ylim(ax2, [200 700]); grid(ax2, 'on');
 set(ax2, 'FontSize', base_pt, 'TickDir','out', 'LineWidth',0.8, ...
     'Box','off', 'XMinorTick','on', 'YMinorTick','on', 'TickLength',[0.015 0.01]);
 
-% Keep only one legend (left tile), to reduce clutter:
 lg2 = legend(ax2, 'Location','eastoutside'); %#ok<LAXES>
 set(lg2,'Box','off', 'FontSize', base_pt);
 
 
-left_margin   = 0.08;   % left margin for axes
-right_margin  = 0.18;   % reserve space for legend on the right
-gutter        = 0.08;   % gap between the two subplots
+left_margin   = 0.08;  
+right_margin  = 0.18;  
+gutter        = 0.08;  
 bottom_margin = 0.14;
 axes_height   = 0.75;
 
@@ -135,6 +139,15 @@ for k = 1:numel(axs)
     ax_h   = outerpos(4) - ti(2) - ti(4);
 
 end
+
+
+
+
+
+
+
+
+
 
 
 
@@ -182,11 +195,15 @@ end
 
 
 
-% Fig 2 c d e f 
+%% Fig 2 c-f 
+%%% The single-day examples (Fig. 2a and b) are for illustrative purposes only,
+%%% and that the full simulations (Fig. 2c-f) loads and processes multi-day PV output data.
 
-%% --- Figure: 2×2 layout ---
-fig_w_cm = 18.3;   % two-column width
-fig_h_cm = 12.0;   % comfortable height for 2×2
+
+
+%%% --- Figure: 2×2 layout ---
+fig_w_cm = 18.3;   
+fig_h_cm = 12.0;  
 figure('Units','centimeters','Position',[2 2 fig_w_cm fig_h_cm]);
 tiledlayout(2,2,'Padding','compact','TileSpacing','compact');
 
@@ -194,8 +211,8 @@ tiledlayout(2,2,'Padding','compact','TileSpacing','compact');
 set(groot,'defaultAxesFontName','Helvetica');
 set(groot,'defaultTextFontName','Helvetica');
 
-base_pt  = 7.5;    % tick/legend
-label_pt = 8.5;    % axis labels
+base_pt  = 7.5;   
+label_pt = 8.5;   
 line_w   = 1.1;
 gridCol  = 0.85*[1 1 1];
 
@@ -225,7 +242,6 @@ for k = 1:4
     nexttile; hold on;
 
     T = T_all{k};
-    % ---- Data ----
     x_all = T{:, "UncontrolledCharging"};
     y_all = T{:, "V2G"};
     
@@ -246,8 +262,6 @@ for k = 1:4
 
     plot(x, y_fit, '-', 'Color', panels{k,4}, 'LineWidth', line_w+0.2, ...
         'DisplayName', sprintf('Fit: y = %.2fx', slope));
-
-    % ---- Labels, limits, grid ----
     xlabel("Max load 'PV + uncontrolled charging' (MW)", 'FontSize', label_pt);
     ylabel('Max load (MW)', 'FontSize', label_pt);
     text(150, 900, sprintf(panels{k,3}), ...
@@ -255,8 +269,6 @@ for k = 1:4
 
     xlim([x_min, x_max]); ylim([y_min, y_max]);
     grid on; ax = gca; ax.GridColor = gridCol;
-
-    % ---- Axes look ----
     set(ax, 'FontSize', base_pt, 'TickDir','out', 'LineWidth',0.8, ...
         'Box','off', 'XMinorTick','on', 'YMinorTick','on', 'TickLength',[0.015 0.01]);
 
@@ -269,7 +281,6 @@ for k = 1:4
 
 
 end
-
 
 drawnow;
 axs = findall(gcf,'Type','axes');
@@ -291,11 +302,28 @@ outPath = "../results/Fig2_AllLines_System_vs_district_" +...
 exportgraphics(gcf, outPath, ...
     'ContentType','vector', 'BackgroundColor','none');
 %{%}
-% Fig S13, V2G, load higher than 1000 MW
 
 
-fig_w_cm = 18.3;   % two-column width
-fig_h_cm = 12.0;   % comfortable height for 2×2
+
+
+
+
+
+
+
+
+
+
+
+
+
+%% Fig S13, V2G, load higher than 1000 MW
+%%% The full simulations loads and processes multi-day PV output data.
+
+
+
+fig_w_cm = 18.3;   
+fig_h_cm = 12.0;   
 figure('Units','centimeters','Position',[2 2 fig_w_cm fig_h_cm]);
 tiledlayout(2,2,'Padding','compact','TileSpacing','compact');
 
@@ -397,9 +425,22 @@ exportgraphics(gcf, outPath, ...
 %{ %}
 
 
-% Fig S14, V1G
 
-%%%% Figure V1G
+
+
+
+
+
+
+
+
+
+
+
+
+%% Fig S14, V1G
+%%% Impact of uni-directional charging %%%
+%%% Figure V1G
 
 fig_w_cm = 18.3;  
 fig_h_cm = 12.0;   

@@ -1,5 +1,9 @@
 %% *Figure 1 - For figure plotting only*
 % *(relevant data are included in the code)*
+%%% The code generates subfigures for Fig. 1.
+
+
+
 %% *Solar Irradiance Plot*
 
 %{ %}
@@ -15,7 +19,7 @@ for i = 1:3
 end
 
 figure (10)
-textString = ["10:30 am", "12:00 pm", "13:30 pm"];  % Text to display
+textString = ["10:30 am", "12:00 pm", "13:30 pm"];  
 
 for plot_count = 1:length(image_lat_lon_data)
 
@@ -30,9 +34,9 @@ for plot_count = 1:length(image_lat_lon_data)
     val = data.Value;
         
 
-    geoscatter(lat, lon, 10, val, 'filled');  % 50 is the size of the marker
+    geoscatter(lat, lon, 10, val, 'filled');  
 
-    geolimits([1.1667, 1.5000], [103.6, 104.05]);  % Latitude: 1°10'N to 1°30'N, Longitude: Example range
+    geolimits([1.1667, 1.5000], [103.6, 104.05]);  
         
 
     geobasemap('none');
@@ -44,18 +48,17 @@ for plot_count = 1:length(image_lat_lon_data)
 
     gx = gca;
         
-    % Hide latitude and longitude tick labels
+
     gx.LatitudeAxis.TickLabels = {};
     gx.LongitudeAxis.TickLabels = {};
 
-    % Hide latitude and longitude labels
+
     gx.LongitudeLabel.String  ={};
     gx.LatitudeLabel.String  ={};
         
     % Hide latitude and longitude tick marks
     gx.TickDir = 'none';
 
-    % Hide tick marks
     gx.LatitudeAxis.TickValues = [];
     gx.LongitudeAxis.TickValues = [];
 
@@ -86,14 +89,14 @@ exportgraphics(gcf, outPath, ...
 
 
 
+
 %% *Power flow on transmission network*
 % *10:30, 12:00, and 13:30*
 
 clear all;
 close all;
 
-%%% Read Singapore planning area
-%%% boundary data
+%%% Read Singapore planning area shape data
 shpdir = '../data/mp14-plng-area-no-sea-planning-area/MP14_PLNG_AREA_NO_SEA_PL.shp';
 sing = shaperead(shpdir);
 info = shapeinfo(shpdir);
@@ -115,7 +118,6 @@ mode_list = ["NetLoad", "UncontrolledCharging", "V1G",...
 
 
 PV_Capcacity_folder = "8_6GW/";
-Optimization_method = "min_eachPLNLoadVariance";
 day_simulating = 31;
 
 
@@ -130,25 +132,21 @@ PowerFlowFilePath_base = "../data/PowerFlow/8_6GW_Sample/" +...
 PowerFlow_data_base = load(PowerFlowFilePath_base, 'PowerFlowMatrix');            
 
 
-for days = [1]  
-    frame_all = [10.5*4, 12*4, 13*4]; 
-    textString = ["10:30 am", "12:00 pm", "13:30 pm"];  % Text to display
-end
+frame_all = [10.5*4, 12*4, 13*4]; 
+textString = ["10:30 am", "12:00 pm", "13:30 pm"];  % Text to display
 
 
-
-fig_w_cm = 18.3;   % Nature 2-column width
-fig_h_cm = 6.0;    % Height for 1×3 layout
+fig_w_cm = 18.3;   
+fig_h_cm = 6.0;    
 figure('Units','centimeters','Position',[2 2 fig_w_cm fig_h_cm]);
 
 set(groot,'defaultAxesFontName','Helvetica');
 set(groot,'defaultTextFontName','Helvetica');
 
-base_pt  = 7.0;   % tick/legend
-label_pt = 8.5;   % axis labels
-title_pt = 9.0;   % panel titles
+base_pt  = 7.0;   
+label_pt = 8.5;   
+title_pt = 9.0;  
 line_w   = 1;
-
 
 
 
@@ -307,8 +305,6 @@ end
 
 
 
-
-
 set(gcf, 'Position', [100, 100, 900, 300]); 
 
 set(ax_list, 'PositionConstraint', 'outerposition'); 
@@ -332,8 +328,14 @@ exportgraphics(gcf, outPath, ...
 
 
 
-%% Local load - Line 74 (with/wo thunderstorms)
 
+
+
+
+
+%% Local load - Line 74 (with/wo thunderstorms) - Fig. 1c
+%%% The single-day examples (Fig. 1c and Fig. 2a and b) are for illustrative purposes only,
+%%% and that the full simulations (Figs. 1d, 2c-f and 4) loads and processes multi-day PV output data.
 
 clear all; close all;
 
@@ -439,9 +441,18 @@ exportgraphics(gcf, outPath_all, ...
 
 
 
-%% *Line load with/wo thunderstorms*
 
-%% --- scatter + regression plot with minor ticks ---
+
+
+
+
+
+
+%% *Line load with/wo thunderstorms* - Fig. 1d
+%%% The single-day examples (Fig. 1c and Fig. 2a and b) are for illustrative purposes only,
+%%% and that the full simulations (Figs. 1d, 2c-f and 4) loads and processes multi-day PV output data.
+
+
 clear all; close all; clc;
 
 
@@ -458,15 +469,14 @@ idx = (x_ori>=x_min) & (x_ori<=x_max);
 x = x_ori(idx);
 y = y_ori(idx);
 
-% Linear regression
-p = polyfit(x, y, 1); % slope & intercept
+p = polyfit(x, y, 1); 
 y_fit = polyval(p, x);
 
-% Fit with intercept=0
+
 a = (x \ y); 
 y_fit0 = a * x; 
 
-%% --- Plot ---
+%%% --- Plot ---
 panel_w_cm = 9.0;   
 panel_h_cm = 6.5;   
 figure('Units','centimeters','Position',[2 2 panel_w_cm panel_h_cm]);
@@ -490,26 +500,16 @@ fill(x_fill, y_fill2, [211,222,208]./255, 'EdgeColor','none','FaceAlpha',0.5); %
 
 % --- Scatter points ---
 scatter(x, y, 10, [0 0.45 0.74], 'filled', 'MarkerFaceAlpha',0.7);
-
-% --- Reference diagonal ---
 plot([x_min, x_max], [y_min, y_max], 'k--', 'LineWidth', 1.0);
-
-% --- Regression line ---
 plot(x, y_fit0, '-', 'Color',[0 0.45 0.74], 'LineWidth', 1.2);
-
-% --- Labels inside plot ---
 text(300, 500, 'load increase', 'FontSize', 8, 'Rotation', 35, 'FontWeight', 'normal');
 text(400, 200, 'load decrease', 'FontSize', 8, 'Rotation', 35, 'FontWeight', 'normal');
-
-
 text(100, 920, 'PV + uncontrolled charging', ...
     'Color','k','FontSize',label_pt,'FontWeight','bold');
-
-
-
-% --- Axis labels ---
 xlabel("Maximum load without thunderstorms (MW)",'FontSize',label_pt);
 ylabel("Maximum load with thunderstorms (MW)",'FontSize',label_pt);
+
+
 
 xlim([x_min x_max]); ylim([y_min y_max]);
 
