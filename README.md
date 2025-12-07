@@ -54,6 +54,6 @@ Powering-Tropical-Cities/
 The analyses were implemented primarily in **MATLAB R2025a**.  
 
 ### Step 2 — Run workflow
-run('code/main_analysis.m')
+run('*.m')
 
 All generated figures and summary tables will appear in the results/ folder.
