@@ -11,30 +11,37 @@ All materials are provided in anonymized form for peer-review purposes only.
 ```text
 Powering-Tropical-Cities/
 ├── code/                          # All analysis and simulation scripts
-│   ├── main_analysis.m            # Main entry point that runs the complete workflow
-│   ├── optimization_model.m       # Decentralized EV–PV–grid optimization model
-│   ├── powerflow_simulation.m     # DC power-flow computation for each scenario
-│   ├── plot_generation.m          # Figure creation scripts for main text and SI
-│   └── helper_functions/          # Utility functions used by other scripts
+│   ├── Figure1_4Sharing.m           # Figure 1 plotting, the data used is included in the code; 
+│   ├── Figure2_4Sharing.m           # Figure 2 plotting, the data used is included in the code; Also, Fig S13, S14 are included
+│   ├── Figure3_4Sharing.m           # Figure 3 plotting, the data used is included in the code
+│   ├── Figure4_4Sharing.m           # Figure 4 plotting, the data used is included in the code
+│   ├── Figure4_4Sharing.m           # Figure 4 plotting, the data used is included in the code
+│   ├── Figure4_4Sharing.m           # Figure 4 plotting, the data used is included in the code
+│   ├── DC_PowerFlow_Modeling.m          # DC power flow simulation
+│   ├── ElectricityGridModel_n_Map_4Sharing.m          # ElectricityGridModel_n_Map_4Sharing.m
+│   ├── xxxx          # xxxx
+│   ├── xxxx          # xxx
+│   └── Helper.m          # xxxx
 │       ├── load_data.m
 │       ├── save_results.m
 │       └── plotting_utils.m
 │
 ├── data/                          # Input datasets (synthetic/anonymized)
-│   ├── load_profiles_sample.mat           # Baseline demand profiles (hourly)
-│   ├── pv_scenarios_sample.mat            # PV generation profiles (BAS/ACC/MAX)
-│   ├── network_parameters_sample.mat      # Simplified 66 kV grid structure
-│   └── ev_adoption_sample.mat             # EV adoption and capacity data
+│   ├── Data4Figure           # Partial data used to repproduce the figures
+│   ├── LineLoad              # Line loading data
+│   ├── ParkedVehNum          # Parked Veh Num data (for Main Fig. 4)
+│   ├── PowerGrid             # Electricity Grid Topology
+│   ├── SystemLoad            # System demand (city-wide demand)
+│   ├── mp14-plng-area-no-sea-planning-area         # planning area shp file, available at: https://data.gov.sg/collections/1700/view
+│   └── xxxxxxx               # xxxxx
 │
-├── results/                       # Outputs generated after running main_analysis.m
-│   ├── figure_1_PV_matching.png
-│   ├── figure_2_EV_distribution.png
-│   ├── figure_3_powerflow.png
-│   ├── figure_4_ramp_reduction.png
-│   ├── summary_metrics.csv
-│   └── intermediate_results.mat
+├── results/                       # Outputs generated after running all "*.m"
+│   ├── figure_1...
+│   ├── figure_2...
+│   ├── figure_3...
+│   ├── figure_4...
+│   └── ...
 │
-├── requirements.txt               # Python dependencies (if applicable)
 └── README.md                      # This file
 ```
 
