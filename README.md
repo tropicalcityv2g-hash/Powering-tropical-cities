@@ -47,12 +47,31 @@ Powering-Tropical-Cities/
 ```
 
 
----
+
+## 2. Requirements
+
+This AC power flow modeling code is implemented in MATLAB and relies on the MATPOWER toolbox.
+
+### MATLAB
+- MATLAB (R2023b or later recommended)  
+
+### MATPOWER
+- MATPOWER power system simulation package (a free, open-source tools for electric power system simulation and optimization)
+- Tested with *MATPOWER 8.1* 
+  (<https://matpower.org>)
+- MATPOWER must be installed and added to the MATLAB path.
+  For example:
+
+```matlab
+addpath('path_to_matpower');
+savepath;
+```
+
 
 ## 2. How to Use
 
 ### Step 1 — Set up environment
-The analyses were implemented primarily in **MATLAB R2025a**.  
+
 
 ### Step 2 — Run workflow
 run('*.m')
