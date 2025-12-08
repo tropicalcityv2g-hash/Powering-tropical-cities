@@ -17,8 +17,9 @@ Powering-Tropical-Cities/
 │   ├── Figure4_4Sharing.m           # Figure 4 plotting, the data used is included in the code
 │   ├── Figure4_4Sharing.m           # Figure 4 plotting, the data used is included in the code
 │   ├── Figure4_4Sharing.m           # Figure 4 plotting, the data used is included in the code
-│   ├── DC_PowerFlow_Modeling.m          # DC power flow simulation
-│   ├── ElectricityGridModel_n_Map_4Sharing.m          # ElectricityGridModel_n_Map_4Sharing.m
+│   ├── DC_PowerFlow_4Sharing.m          # DC power flow simulation
+│   ├── AC_PowerFlow_4Sharing.m          # AC power flow simulation
+│   ├── ElectricityGridModel_n_Map_4Sharing.m          # Electricity Grid Model visualisation (DC power flow modeling)
 │   ├── xxxx          # xxxx
 │   ├── xxxx          # xxx
 │   └── Helper.m          # xxxx
@@ -60,5 +61,6 @@ All generated figures and summary tables will appear in the results/ folder.
 
 ## Notes:
 i). The code for **Battery degradation simulation** is adapted from BLAST-List (https://github.com/NREL/BLAST-Lite). All the revelant battery models and parameters can be found in that repository. 
+
 ii). 
 
