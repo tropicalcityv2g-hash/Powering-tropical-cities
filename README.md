@@ -21,11 +21,10 @@ Powering-Tropical-Cities/
 │   ├── AC_PowerFlow_4Sharing.m          # AC power flow simulation
 │   ├── ElectricityGridModel_n_Map_4Sharing.m          # Electricity Grid Model visualisation (DC power flow modeling)
 │   ├── xxxx          # xxxx
-│   ├── xxxx          # xxx
 │   └── Helper.m          # xxxx
-│       ├── load_data.m
-│       ├── save_results.m
-│       └── plotting_utils.m
+│       ├── xxx.m
+│       ├── xxx.m
+│       └── xxx.m
 │
 ├── data/                          # Input datasets (synthetic/anonymized)
 │   ├── Data4Figure           # Partial data used to repproduce the figures
