@@ -27,10 +27,10 @@ Powering-Tropical-Cities/
 │       └── xxx.m
 │
 ├── data/                          # Input datasets (synthetic/anonymized)
-│   ├── Data4Figure           # Partial data used to repproduce the figures
+│   ├── Data4Figure           # Main data used to reproduce the figures
 │   ├── LineLoad              # Line loading data
 │   ├── ParkedVehNum          # Parked Veh Num data (for Main Fig. 4)
-│   ├── PowerGrid             # Electricity Grid Topology
+│   ├── PowerGrid             # Electricity network Topology (and parameters)
 │   ├── SystemLoad            # System demand (city-wide demand)
 │   ├── mp14-plng-area-no-sea-planning-area         # planning area shp file, available at: https://data.gov.sg/collections/1700/view
 │   └── xxxxxxx               # xxxxx
