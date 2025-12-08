@@ -57,3 +57,8 @@ The analyses were implemented primarily in **MATLAB R2025a**.
 run('*.m')
 
 All generated figures and summary tables will appear in the results/ folder.
+
+## Notes:
+i). The code for **Battery degradation simulation** is adapted from BLAST-List (https://github.com/NREL/BLAST-Lite). All the revelant battery models and parameters can be found in that repository. 
+ii). 
+
