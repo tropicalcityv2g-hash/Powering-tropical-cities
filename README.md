@@ -4,8 +4,6 @@ This repository contains the code and minimal data necessary to reproduce the ke
 
 All materials are provided in anonymized form for peer-review purposes only.
 
-Detailed description of each script is included in the top of script.
-
 ---
 
 ## 1. Repository Structure
@@ -77,9 +75,12 @@ run('*.m')
 All generated figures and summary tables will appear in the *results* folder.
 
 ## Notes:
-i). The code for **Battery degradation simulation** is adapted from BLAST-List (https://github.com/NREL/BLAST-Lite). All the revelant battery models and parameters can be found in that repository. 
 
-ii). Electricity demand and solar irradiance data are publicly available from the Energy Market Authority of Singapore (https://www.ema.gov.sg/resources/statistics). Data for the derivation of location-specific PV generation potentials are also publicly available as described in [1]. Travel survey and census data are publicly available from the Singapore Department of Statistics (https://www.singstat.gov.sg/publications/reference/cop2020). Individual-level mobility data are not publicly available due to privacy considerations, while the data to reproduce the findings and figures in this paper are all available in this repository. 
+i). Detailed description of each script is included in the top of script.
+
+ii). The code for **Battery degradation simulation** is adapted from BLAST-List (https://github.com/NREL/BLAST-Lite). All the revelant battery models and parameters can be found in that repository. 
+
+iii). Electricity demand and solar irradiance data are publicly available from the Energy Market Authority of Singapore (https://www.ema.gov.sg/resources/statistics). Data for the derivation of location-specific PV generation potentials are also publicly available as described in [1]. Travel survey and census data are publicly available from the Singapore Department of Statistics (https://www.singstat.gov.sg/publications/reference/cop2020). Individual-level mobility data are not publicly available due to privacy considerations, while the data to reproduce the findings and figures in this paper are all available in this repository. 
 
 [1]. Caviezel, D., Waibel, C., Schläpfer, M. & Schlueter, A. Vehicle-to-grid coupled photo-voltaic optimization for Singapore at a district resolution. In 36th International Conference on Efficiency, Cost, Optimization, Simulation and Environmental Impact of Energy Systems (ECOS), 3327–3338 (2023).574
 
