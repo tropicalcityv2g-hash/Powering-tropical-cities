@@ -78,7 +78,7 @@ All generated figures and summary tables will appear in the *results* folder.
 
 i). Detailed description of each script is included in the top of script.
 
-ii). The code for **Battery degradation simulation** is adapted from BLAST-List (https://github.com/NREL/BLAST-Lite). All the revelant battery models and parameters can be found in that repository. 
+ii). The code for **Battery degradation simulation** is adapted from BLAST-List (https://github.com/NREL/BLAST-Lite). All the revelant battery models and parameters can be found at https://github.com/NREL/BLAST-Lite
 
 iii). Electricity demand and solar irradiance data are publicly available from the Energy Market Authority of Singapore (https://www.ema.gov.sg/resources/statistics). Data for the derivation of location-specific PV generation potentials are also publicly available as described in [1]. Travel survey and census data are publicly available from the Singapore Department of Statistics (https://www.singstat.gov.sg/publications/reference/cop2020). Individual-level mobility data are not publicly available due to privacy considerations, while the data to reproduce the findings and figures in this paper are all available in this repository. 
 
