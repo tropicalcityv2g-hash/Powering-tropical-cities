@@ -20,11 +20,8 @@ Powering-Tropical-Cities/
 │   ├── DC_PowerFlow_4Sharing.m          # DC power flow simulation
 │   ├── AC_PowerFlow_4Sharing.m          # AC power flow simulation
 │   ├── ElectricityGridModel_n_Map_4Sharing.m          # Electricity Grid Model visualisation (DC power flow modeling)
-│   ├── xxxx          # xxxx
-│   └── Helper.m          # xxxx
-│       ├── xxx.m
-│       ├── xxx.m
-│       └── xxx.m
+│   ├── EV_district_level_optimization_4Sharing.m          # EV district-level optimization demonstration model
+│   ├── EV_system_level_optimization_4Sharing.m          # EV system-level optimization demonstration model
 │
 ├── data/                          # Input datasets (synthetic/anonymized)
 │   ├── Data4Figure           # Main data used to reproduce the figures
@@ -33,7 +30,7 @@ Powering-Tropical-Cities/
 │   ├── PowerGrid             # Electricity network Topology (and parameters)
 │   ├── SystemLoad            # System demand (city-wide demand)
 │   ├── mp14-plng-area-no-sea-planning-area         # planning area shp file, available at: https://data.gov.sg/collections/1700/view
-│   └── xxxxxxx               # xxxxx
+│   └── MobilityInputSample_dummy               # Dummy input for the EV charging optimization model
 │
 ├── results/                       # Outputs generated after running all "*.m"
 │   ├── figure_1...
@@ -80,5 +77,5 @@ All generated figures and summary tables will appear in the *results* folder.
 ## Notes:
 i). The code for **Battery degradation simulation** is adapted from BLAST-List (https://github.com/NREL/BLAST-Lite). All the revelant battery models and parameters can be found in that repository. 
 
-ii). xxx
+ii). Electricity demand and solar irradiance data are publicly available from the Energy Market Authority of Singapore (https://www.ema.gov.sg/resources/statistics). Data for the derivation of location-specific PV generation potentials are also publicly available. Travel survey and census data are publicly available from the Singapore Department of Statistics (https://www.singstat.gov.sg/publications/reference/cop2020). Individual-level mobility data are not publicly available due to privacy considerations, while the data to reproduce the findings and figures in this paper are all available in this repository. 
 
