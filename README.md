@@ -4,6 +4,8 @@ This repository contains the code and minimal data necessary to reproduce the ke
 
 All materials are provided in anonymized form for peer-review purposes only.
 
+Detailed description of each script is included in the top of script.
+
 ---
 
 ## 1. Repository Structure
