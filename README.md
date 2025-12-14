@@ -75,7 +75,7 @@ savepath;
 
 
 
-## 2. How to Use
+## 3. How to Use
 
 ### Step 1 — Set up environment
 - MATLAB
