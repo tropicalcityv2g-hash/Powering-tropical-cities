@@ -85,7 +85,7 @@ PV = readmatrix("../data/MobilityInputSample_dummy/PV_dummy.csv");
 % [2] BUILD & SOLVE OPTIMIZATION
 %% ============================================================
 N = size(driving,2);
-fprintf("[4] Building and solving optimization model...\n");
+fprintf("[2] Building and solving optimization model...\n");
 
 result = build_and_solve_EV_SystemOpt(SystemDemand, PV, driving, avail, SOC_init, params);
 
@@ -100,7 +100,7 @@ end
 %% ============================================================
 % [3] POST-PROCESSING
 %% ============================================================
-fprintf("[5] postprocess and plot...\n");
+fprintf("[3] postprocess and plot...\n");
 postprocess_and_plot(result, SystemDemand, PV, driving, params);
 
 fprintf("=== Pipeline finished ===\n");

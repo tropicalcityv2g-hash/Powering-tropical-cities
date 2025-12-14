@@ -59,7 +59,7 @@ clear; clc;
 
 
 %% ============================================================
-% [0] PARAMETERS & INPUT DATA
+% [1] PARAMETERS & INPUT DATA
 %% ============================================================
 Num_veh = 200;
 params = init_parameters(Num_veh);
@@ -84,10 +84,10 @@ veh2dist = generate_random_veh2dist(96, params.target_N, 55, 42);
 
 
 %% ============================================================
-% [1] BUILD & SOLVE OPTIMIZATION
+% [2] BUILD & SOLVE OPTIMIZATION
 %% ============================================================
 N = size(driving,2);
-fprintf("[4] Building and solving optimization model...\n");
+fprintf("[2] Building and solving optimization model...\n");
 
 result = build_and_solve_EV_DistrictOpt(SystemDemand, PV, driving, avail, SOC_init, veh2dist, params);
 
@@ -99,9 +99,9 @@ end
 
 
 %% ============================================================
-% [2] POST-PROCESSING
+% [3] POST-PROCESSING
 %% ============================================================
-fprintf("[5] postprocess and plot...\n");
+fprintf("[3] postprocess and plot...\n");
 postprocess_and_plot(result, SystemDemand, PV, driving, veh2dist, params);
 
 
