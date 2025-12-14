@@ -65,11 +65,22 @@ addpath('path_to_matpower');
 savepath;
 ```
 
+### Gurobi solver
+- Gurobi Optimizer (tested on: v12.0.0)
+  - Gurobi MATLAB interface (`gurobi.m`) must be available on the MATLAB path.
+    
+- License
+  - Gurobi is a commercial solver. You must have a valid Gurobi license to run the optimization. While Gurobi’s academic licenses are available — at no cost — to students, faculty, and staff at accredited degree-granting institutions (see <https://www.gurobi.com/academia/academic-program-and-licenses/>). See also Gurobi licensing options and installation instructions in the official documentation.
+
+
+
 
 ## 2. How to Use
 
 ### Step 1 — Set up environment
-
+- MATLAB
+- MATPOWER
+- Gurobi
 
 ### Step 2 — Run workflow
 run('*.m')
