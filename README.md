@@ -22,6 +22,7 @@ Powering-Tropical-Cities/
 │   ├── ElectricityGridModel_n_Map_4Sharing.m          # Electricity Grid Model visualisation (DC power flow modeling)
 │   ├── EV_district_level_optimization_4Sharing.m          # EV district-level optimization demonstration model
 │   ├── EV_system_level_optimization_4Sharing.m          # EV system-level optimization demonstration model
+│   └── BatteryDegradationSimulationPlot_4Sharing.m               # Battery degradation simulation results and ploting, the data used is included in the code
 │
 ├── data/                          # Input datasets (synthetic/anonymized)
 │   ├── Data4Figure           # Main data used to reproduce the figures
@@ -30,7 +31,8 @@ Powering-Tropical-Cities/
 │   ├── PowerGrid             # Electricity network Topology (and parameters)
 │   ├── SystemLoad            # System demand (city-wide demand)
 │   ├── mp14-plng-area-no-sea-planning-area         # planning area shp file, available at: https://data.gov.sg/collections/1700/view
-│   └── MobilityInputSample_dummy               # Dummy input for the EV charging optimization model
+│   ├── MobilityInputSample_dummy                   # Dummy input for the EV charging optimization model
+│   └── BatteryDegradationSimulationData_csv        # Battery degradation simulation results (in csv file)
 │
 ├── results/                       # Outputs generated after running all "*.m"
 │   ├── figure_1...
