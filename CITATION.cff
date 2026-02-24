@@ -1,0 +1,8 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+- Jiazu Zhou, Tianyu Dong, Hongrong Yang, Seanglidet Yean, Bu-Sung Lee, and Markus Schläpfer
+title:tropicalcityv2g-hash/Powering-tropical-cities: Decentralized electric vehicle charging enables large-scale photovoltaic integration in tropical cities
+DOI: 10.5281/zenodo.18742904
+version: V1.0.0
+date-released: 2026-02-23
